@@ -224,6 +224,12 @@ Job được đưa vào hàng đợi nên phản hồi upload có nghĩa là vid
 
 Các trạng thái job thường gặp: `queued`, `processing`, `completed`, `failed`. Khi job lỗi, xem `errorMessage` và log API có tiền tố `[VideoProcessing]` cùng mã job.
 
+Có thể kiểm tra nhanh trạng thái job bằng API (thay `<job-id>` bằng ID trả về khi upload):
+
+```bash
+curl http://localhost:3001/jobs/<job-id>
+```
+
 ## Lưu ý hiện tại
 
 - Worker hiện xử lý video upload; luồng xử lý video nhập bằng URL chưa được hỗ trợ dù API đã có endpoint nhận URL.
